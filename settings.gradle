@@ -1,0 +1,3 @@
+rootProject.name = "LibBaseView"
+include ':app'
+include ':lib_baseview'
