@@ -39,7 +39,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     
-//    implementation 'com.hysz.lib_tools:lib_tools:0.0.3-RELEASE'
+    implementation 'com.hysz.lib_baseview:lib_baseview:0.0.6-RELEASE'
 
 
     //本地仓库/远程仓库使用方式
@@ -47,5 +47,5 @@ dependencies {
     //aar直接依赖方式
 //    implementation(name: 'lib_baseview-1.0.0', ext: 'aar')
 
-    implementation project(path: ':lib_baseview')
+//    implementation project(path: ':lib_baseview')
 }
