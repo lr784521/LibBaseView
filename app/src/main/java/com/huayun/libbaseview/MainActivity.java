@@ -1,15 +1,21 @@
 package com.huayun.libbaseview;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.huayun.lib_base_view.view.activity.BaseActivity;
 
-import android.os.Bundle;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int getLayout() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void init() {
+
+    }
+
+    @Override
+    protected void initListener() {
 
     }
 
