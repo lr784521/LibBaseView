@@ -4,7 +4,7 @@ import android.view.View;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.huayun.lib_tools.constant.event.EventMessage;
+import com.huayun.lib_tools.util.event.EventMessage;
 import com.huayun.lib_tools.util.toast.ToastEnum;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;
 

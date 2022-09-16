@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.huayun.lib_base_view.call.mvp.activity.IBaseActivityInterface;
-import com.huayun.lib_tools.constant.ConstantKeyBase;
+import com.huayun.lib_base_view.constant.ConstantKeyBaseView;
 import com.huayun.lib_tools.util.AppManager;
 import com.huayun.lib_tools.util.database.MMkvHelper;
 import com.huayun.lib_tools.util.language.LanguageUtil;
@@ -30,7 +30,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseAct
     @Override
     protected void attachBaseContext(Context newBase) {
         //初始化语言
-        String language = MMkvHelper.getInstance().getString(ConstantKeyBase.SAVE_LANGUAGE_KEY, Locale.getDefault().getLanguage());
+        String language = MMkvHelper.getInstance().getString(ConstantKeyBaseView.SAVE_LANGUAGE_KEY, Locale.getDefault().getLanguage());
         super.attachBaseContext(LanguageUtil.attachBaseContext(newBase, language));
     }
 

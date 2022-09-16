@@ -37,11 +37,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //工具库
-    api 'com.hysz.lib_tools:lib_tools:0.0.1-SNAPSHOT'
+    api 'com.hysz.lib_tools:lib_tools:0.0.2-SNAPSHOT'
     //网络请求库
-    api 'com.hysz.lib_network:lib_network:0.0.1-SNAPSHOT'
+    api 'com.hysz.lib_network:lib_network:0.0.2-SNAPSHOT'
     //数据库
-    api 'com.hysz.lib_db:lib_db:0.0.1-SNAPSHOT'
+    api 'com.hysz.lib_db:lib_db:0.0.2-SNAPSHOT'
     //状态栏处理
     api "com.gitee.zackratos:UltimateBarX:0.8.0"
     //阿里组件化路由
