@@ -37,26 +37,24 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //工具库
-    api 'com.hysz.lib_tools:lib_tools:0.0.2-SNAPSHOT'
+    implementation 'com.hysz.lib_tools:lib_tools:0.0.2-SNAPSHOT'
     //网络请求库
-    api 'com.hysz.lib_network:lib_network:0.0.2-SNAPSHOT'
+    implementation 'com.hysz.lib_network:lib_network:0.0.3-SNAPSHOT'
     //数据库
-    api 'com.hysz.lib_db:lib_db:0.0.2-SNAPSHOT'
-    //状态栏处理
-    api "com.gitee.zackratos:UltimateBarX:0.8.0"
+    implementation 'com.hysz.lib_db:lib_db:0.0.2-SNAPSHOT'
     //阿里组件化路由
-    api "com.alibaba:arouter-api:1.5.2"
-    //Rx系列
-    api "io.reactivex.rxjava3:rxandroid:3.0.0"
-    api "io.reactivex.rxjava3:rxjava:3.1.5"
-    //AgentWeb
-    api "com.github.Justson.AgentWeb:agentweb-core:v5.0.0-alpha.1-androidx"
-    //控件查找
-    api "com.jakewharton:butterknife:10.1.0"
-    annotationProcessor "com.jakewharton:butterknife-compiler:10.1.0"
+    implementation "com.alibaba:arouter-api:1.5.2"
     //注入框架
     implementation "com.google.dagger:hilt-android:2.42"
-    annotationProcessor "com.google.dagger:hilt-compiler:2.42"
+    //控件查找
+    implementation "com.jakewharton:butterknife:10.1.0"
+    //Rx系列
+    implementation "io.reactivex.rxjava3:rxandroid:3.0.0"
+    implementation "io.reactivex.rxjava3:rxjava:3.1.5"
+    //状态栏处理
+    api "com.gitee.zackratos:UltimateBarX:0.8.0"
+    //AgentWeb WebView处理
+    api "com.github.Justson.AgentWeb:agentweb-core:v5.0.0-alpha.1-androidx"
     //事件通知
     api "org.greenrobot:eventbus-java:3.3.1"
     //智能刷新组件
