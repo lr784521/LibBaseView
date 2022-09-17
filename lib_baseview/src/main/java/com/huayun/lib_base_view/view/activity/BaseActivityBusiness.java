@@ -43,7 +43,6 @@ public abstract class BaseActivityBusiness extends BaseActivity implements IBase
     protected int pageNo = 1;//页码
     protected int pageSize = 20;//页大小
 
-
     //状态栏样式
     private int statusBarStyleType = 0; //状态栏样式类型
     private int defaultStatusBarColor; //类型0.单一颜色样式

@@ -14,6 +14,12 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                // 路由每个模块的名称
+                arguments += [AROUTER_MODULE_NAME: project.name]
+            }
+        }
     }
 
     buildTypes {
@@ -39,17 +45,19 @@ dependencies {
     //工具库
     implementation 'com.hysz.lib_tools:lib_tools:0.0.2-SNAPSHOT'
     //网络请求库
-    implementation 'com.hysz.lib_network:lib_network:0.0.3-SNAPSHOT'
+    implementation 'com.hysz.lib_network:lib_network:0.0.4-SNAPSHOT'
     //数据库
     implementation 'com.hysz.lib_db:lib_db:0.0.2-SNAPSHOT'
     //阿里组件化路由
     implementation "com.alibaba:arouter-api:1.5.2"
+    annotationProcessor "com.alibaba:arouter-compiler:1.5.2"
     //注入框架
     implementation "com.google.dagger:hilt-android:2.42"
+    annotationProcessor "com.google.dagger:hilt-compiler:2.42"
     //控件查找
     implementation "com.jakewharton:butterknife:10.1.0"
-    //Rx系列
-    implementation "io.reactivex.rxjava3:rxandroid:3.0.0"
+    annotationProcessor "com.jakewharton:butterknife-compiler:10.1.0"
+    //RxJava
     implementation "io.reactivex.rxjava3:rxjava:3.1.5"
     //状态栏处理
     api "com.gitee.zackratos:UltimateBarX:0.8.0"
