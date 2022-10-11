@@ -1,5 +1,6 @@
 package com.huayun.lib_base_view.view.adapter.recycle;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -65,8 +66,16 @@ public abstract class BaseRecycleListAdapter<T> extends RecyclerView.Adapter<Bas
     }
 
     @Override
-    public void onBindViewHolder(BaseViewHolder holder, int position) {
+    public void onBindViewHolder(BaseViewHolder holder, @SuppressLint("RecyclerView") int position) {
         if (dataList != null && dataList.size() > 0) {
+            if(onItemClickListener!=null){
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        onItemClickListener.onItemClick(position);
+                    }
+                });
+            }
             //绑定Item数据
             bindData(holder, dataList.get(position), position);
         }

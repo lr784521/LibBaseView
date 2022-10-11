@@ -43,11 +43,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //工具库
-    implementation 'com.hysz.lib_tools:lib_tools:0.0.2-SNAPSHOT'
+    implementation 'com.hysz.lib_tools:lib_tools:0.0.5-SNAPSHOT'
     //网络请求库
-    implementation 'com.hysz.lib_network:lib_network:0.0.4-SNAPSHOT'
+    implementation 'com.hysz.lib_network:lib_network:0.0.9-SNAPSHOT'
     //数据库
-    implementation 'com.hysz.lib_db:lib_db:0.0.2-SNAPSHOT'
+    implementation 'com.hysz.lib_db:lib_db:0.0.3-SNAPSHOT'
     //阿里组件化路由
     implementation "com.alibaba:arouter-api:1.5.2"
     annotationProcessor "com.alibaba:arouter-compiler:1.5.2"

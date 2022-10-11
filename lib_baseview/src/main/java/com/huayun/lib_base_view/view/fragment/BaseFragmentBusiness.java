@@ -374,10 +374,16 @@ public abstract class BaseFragmentBusiness extends BaseFragment implements IBase
             emptyView.setVisibility(View.VISIBLE);
             layout.setVisibility(View.GONE);
         } else {
-            if (pageNo == 1 && list.size() > 0) {
-                layout.setVisibility(View.VISIBLE);
+            if (pageNo == 1) {
                 emptyView.setVisibility(View.GONE);
+                layout.setVisibility(View.VISIBLE);
             }
+        }
+        //判断是否有更多数据
+        if (list.size() < pageSize) {
+            layout.finishLoadMoreWithNoMoreData();
+        } else {
+            layout.finishLoadMore();
         }
     }
 
