@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.flexbox.FlexboxLayoutManager;
+import com.huayun.lib_base_view.call.listener.OnAdapterActionClickListener;
 import com.huayun.lib_base_view.call.listener.OnItemClickListener;
 
 import java.util.List;
@@ -24,7 +25,9 @@ public abstract class BaseRecycleListAdapter<T> extends RecyclerView.Adapter<Bas
     protected List<T> dataList; //列表数据
 
     public Context context;
+    public boolean layoutWidthAdapt = false;//布局宽度是否自适应  true 自适应 false 占满
     protected OnItemClickListener onItemClickListener; //Item点击回调
+    protected OnAdapterActionClickListener onAdapterActionClickListener; //Item中的控件点击回调
 
     public BaseRecycleListAdapter(List<T> dataList) {
         this.dataList = dataList;
@@ -42,19 +45,21 @@ public abstract class BaseRecycleListAdapter<T> extends RecyclerView.Adapter<Bas
         context = parent.getContext();
         //初始化加载xml布局
         View view = LayoutInflater.from(context).inflate(getLayoutId(), parent, false);
-        ViewGroup.LayoutParams params = view.getLayoutParams();
-        //设置布局宽高占位
-        if (params instanceof FlexboxLayoutManager.LayoutParams) {
-            FlexboxLayoutManager.LayoutParams layoutParams = (FlexboxLayoutManager.LayoutParams) params;
-            layoutParams.setFlexGrow(0);
-            view.setLayoutParams(layoutParams);
-        } else {
-            if (isVertical()) {
-                view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT));
+        if (!layoutWidthAdapt) {
+            ViewGroup.LayoutParams params = view.getLayoutParams();
+            //设置布局宽高占位
+            if (params instanceof FlexboxLayoutManager.LayoutParams) {
+                FlexboxLayoutManager.LayoutParams layoutParams = (FlexboxLayoutManager.LayoutParams) params;
+                layoutParams.setFlexGrow(0);
+                view.setLayoutParams(layoutParams);
             } else {
-                view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT));
+                if (isVertical()) {
+                    view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                            ViewGroup.LayoutParams.WRAP_CONTENT));
+                } else {
+                    view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+                            ViewGroup.LayoutParams.WRAP_CONTENT));
+                }
             }
         }
         return new BaseViewHolder(view);
@@ -68,7 +73,7 @@ public abstract class BaseRecycleListAdapter<T> extends RecyclerView.Adapter<Bas
     @Override
     public void onBindViewHolder(BaseViewHolder holder, @SuppressLint("RecyclerView") int position) {
         if (dataList != null && dataList.size() > 0) {
-            if(onItemClickListener!=null){
+            if (onItemClickListener != null) {
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -223,5 +228,14 @@ public abstract class BaseRecycleListAdapter<T> extends RecyclerView.Adapter<Bas
      */
     public void setOnItemClickListener(OnItemClickListener clickListener) {
         this.onItemClickListener = clickListener;
+    }
+
+    /**
+     * Item中的控件点击回调
+     *
+     * @param onAdapterActionClickListener
+     */
+    public void setOnAdapterActionClickListener(OnAdapterActionClickListener onAdapterActionClickListener) {
+        this.onAdapterActionClickListener = onAdapterActionClickListener;
     }
 }
