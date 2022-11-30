@@ -43,7 +43,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //工具库
-    implementation 'com.hysz.lib_tools:lib_tools:0.0.7-SNAPSHOT'
+    implementation 'com.hysz.lib_tools:lib_tools:0.0.10-SNAPSHOT'
     //网络请求库
     implementation 'com.hysz.lib_network:lib_network:0.0.10-SNAPSHOT'
     //数据库

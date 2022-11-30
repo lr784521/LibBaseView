@@ -13,9 +13,9 @@ import com.huayun.lib_base_view.call.mvp.activity.IBaseActivityBusinessInterface
 import com.huayun.lib_base_view.widget.CustomTitle;
 import com.huayun.lib_tools.util.DoubleClickExitDetector;
 import com.huayun.lib_tools.util.NoticeMessageUtils;
-import com.huayun.lib_tools.util.SoftKeyboardUtil;
 import com.huayun.lib_tools.util.edittext.EditTextUtil;
 import com.huayun.lib_tools.util.event.EventMessage;
+import com.huayun.lib_tools.util.softkeyboard.SoftKeyboardUtil;
 import com.huayun.lib_tools.util.toast.ToastEnum;
 import com.huayun.lib_tools.util.toast.ToastUtil;
 import com.scwang.smart.refresh.layout.SmartRefreshLayout;

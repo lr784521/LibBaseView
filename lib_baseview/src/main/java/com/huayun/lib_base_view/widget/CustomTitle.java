@@ -13,7 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.huayun.lib_base_view.R;
-import com.huayun.lib_tools.util.SoftKeyboardUtil;
+import com.huayun.lib_tools.util.softkeyboard.SoftKeyboardUtil;
 
 
 /**
