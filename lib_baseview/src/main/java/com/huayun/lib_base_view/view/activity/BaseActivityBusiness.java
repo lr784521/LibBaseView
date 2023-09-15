@@ -280,8 +280,8 @@ public abstract class BaseActivityBusiness extends BaseActivity implements IBase
      * @param isDisappear 点击是否不消失
      */
     @Override
-    public void showSystemNotification(int tag, String title, String content, Class aClass, boolean autoCancel, boolean isDisappear,int logo) {
-        NoticeMessageUtils.showNotification(tag, title, content, aClass, autoCancel, isDisappear,logo);
+    public void showSystemNotification(int tag, String title, String content, Class aClass, boolean autoCancel, boolean isDisappear, int logo) {
+        NoticeMessageUtils.showNotification(tag, title, content, aClass, autoCancel, isDisappear, logo);
     }
 
     /**
@@ -292,8 +292,8 @@ public abstract class BaseActivityBusiness extends BaseActivity implements IBase
      * @param isDisappear 点击是否不消失
      */
     @Override
-    public void showCustomNotification(int tag, Class aClass, boolean isDisappear,int logo) {
-        NoticeMessageUtils.customNotification(tag, aClass, isDisappear,logo);
+    public void showCustomNotification(int tag, Class aClass, boolean isDisappear, int logo) {
+        NoticeMessageUtils.customNotification(tag, aClass, isDisappear, logo);
     }
 
     /**
@@ -467,11 +467,15 @@ public abstract class BaseActivityBusiness extends BaseActivity implements IBase
     @Override
     public void recyclerViewEmptyView(SmartRefreshLayout layout, View emptyView, List list) {
         if (pageNo == 1 && list.size() == 0) {
-            emptyView.setVisibility(View.VISIBLE);
-            layout.setVisibility(View.GONE);
+            if (emptyView != null) {
+                emptyView.setVisibility(View.VISIBLE);
+            }
+            layout.setVisibility(View.VISIBLE);
         } else {
             if (pageNo == 1) {
-                emptyView.setVisibility(View.GONE);
+                if (emptyView != null) {
+                    emptyView.setVisibility(View.GONE);
+                }
                 layout.setVisibility(View.VISIBLE);
             }
         }
@@ -493,10 +497,14 @@ public abstract class BaseActivityBusiness extends BaseActivity implements IBase
     @Override
     public void recyclerViewEmptyView(RecyclerView rvList, View emptyView, List list) {
         if (list.size() == 0) {
-            emptyView.setVisibility(View.VISIBLE);
+            if (emptyView != null) {
+                emptyView.setVisibility(View.VISIBLE);
+            }
             rvList.setVisibility(View.GONE);
         } else {
-            emptyView.setVisibility(View.GONE);
+            if (emptyView != null) {
+                emptyView.setVisibility(View.GONE);
+            }
             rvList.setVisibility(View.VISIBLE);
         }
     }
